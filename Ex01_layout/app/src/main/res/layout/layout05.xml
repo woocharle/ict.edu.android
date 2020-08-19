@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity05">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="208dp"
+            android:layout_height="155dp"
+            android:background="#6E3EA5"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button22"
+            android:layout_width="128dp"
+            android:layout_height="98dp"
+            android:background="#42413D"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/button25"
+            android:layout_gravity="top|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D6D0D0"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/button26"
+            android:layout_gravity="top|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/button27"
+            android:layout_gravity="bottom|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/button28"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/button29"
+            android:layout_gravity="center|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/button30"
+            android:layout_gravity="center|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/button31"
+            android:layout_gravity="bottom|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9" />
+
+    </FrameLayout>
+</LinearLayout>

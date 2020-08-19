@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        style="?android:attr/ratingBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <!-- style="?android:attr/ratingBarStyleIndicator"
+         크기는 작아지고 사용자가 수정할 수 없다.-->
+
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RatingBar
+        android:id="@+id/ratingBar3"
+        style="?android:attr/ratingBarStyle"
+        android:isIndicator="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--
+        style="?android:attr/ratingBarStyle"
+        android:isIndicator="true"
+        크기는 작아지지않고 사용자가 수정할 수 없다.
+    -->
+
+
+    <RatingBar
+        android:id="@+id/ratingBar4"
+        style="?android:attr/ratingBarStyle"
+        android:numStars="7"
+        android:rating="3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--
+        android:numStars="7"   => 별의 숫자
+        android:rating="3"     => 초기 별의 갯수
+    -->
+
+    <RatingBar
+        android:id="@+id/ratingBar5"
+        style="?android:attr/ratingBarStyle"
+        android:stepSize="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- stepSize="1" 한단계씩만 증가 -->
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+</LinearLayout>

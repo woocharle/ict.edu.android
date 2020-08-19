@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="일반버튼" />
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:srcCompat="@mipmap/ic_launcher" />
+
+    <CheckBox
+        android:id="@+id/chk1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="글자색 변경" />
+
+    <CheckBox
+        android:id="@+id/chk2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="글자 크기 변경" />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rg_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="빨강" />
+
+        <RadioButton
+            android:id="@+id/rg_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="파랑" />
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+    </RadioGroup>
+
+</LinearLayout>

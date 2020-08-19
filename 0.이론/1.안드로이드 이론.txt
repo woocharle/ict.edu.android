@@ -1,0 +1,85 @@
+0. Intro
+
+   (1) https://developer.android.com/studio?hl=ko 주소에서 다운을 받는다.
+
+   (2) Kotlin: Android 앱 개발 프로그램
+
+1. 준비
+
+   (1) 우측하단의 configure에서 SDKmanager를 클릭하여 설치된 버전을 확인한다.
+
+   (2) SDK Tools의 google Play Service다운 받기 google 지도를 사용할 때 쓸 것.
+
+   (3) 프로젝트 만들기
+	
+	1) +start a new Android Studio project 클릭
+
+	2) Name: 프로젝트 이름
+
+	   packagename: com.[회사에 따라다름].프로젝트이름
+
+	   Save location: 워크스페이스주소\프로젝트이름
+
+	   Minimum SDK: 회사마다 다르지만 여기서는 Android 7.0(Nougat)
+
+   (4) ADK manager
+
+	1) DEVICE정하고 다운 받기
+
+
+   (5) apk 실행
+
+	1) ADK manager열기 
+
+
+
+	#) 재생버튼을 누른다.
+
+
+2. 프로젝트 구성
+
+   (1) maifests
+
+	- AndroidManifest.xml  안드로이드 앱에 대한 정보를 가지고 있는 파일
+
+   (1) java: 자바코딩을 하는 파일
+
+   (2) 리소스 파일 (res): 겉모양을 만듬
+
+	1) drawable: 그림 저장 파일 
+
+	2) layout: 화면 구성 파일 
+
+        3) mipmap: 안드로이드 그림 파일이 존재 *지금은 쓸 일이 없음.
+
+	4) values: 각종 리소스 파일 지정, 스타일을 지정 
+
+
+3. AndroidManifest
+
+   (1) @: 현재 가지고 있는 리소스를 사용.
+
+   (2)   
+
+4. 뷰와 뷰그룹
+
+   (1) 뷰: 화면을 구성하는 구성요소를 뷰라고 한다. 
+
+   (2) 뷰 그룹: 뷰를 여러개 포함하고 있는 것을 뷰 그룹이라고 부른다.
+                뷰 그룹은 다른 뷰 그룹을 뷰처럼 사용할 수도 있다.
+		즉, 여러개의 뷰나 다른 뷰그룹을 관리하는 관리자의 역할을 한다.
+		일부는 뷰들을 화면에 배치하는 역할을 수행한다.
+		이러한 역할을 수행하는 뷰 그룹을 레이아웃이라고 부른다.
+
+
+5. layout
+
+   (1)
+* layout 스타일 바꾸기 component tree에 가서 마우스 오른쪽 버튼 클릭 후 convert view클릭
+
+
+   (2) Frame layout
+	
+	1) 보통 혼자서 사용하지 않는다.
+
+	2) 위치지정은 

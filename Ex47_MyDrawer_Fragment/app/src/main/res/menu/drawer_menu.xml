@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 하나만 선택할수있게 만들자 -->
+    <!-- drawable에서 만들자 -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu1"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera"/>
+        <item
+            android:id="@+id/menu2"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery"/>
+        <item
+            android:id="@+id/menu3"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="통화목록"/>
+    </group>
+</menu>

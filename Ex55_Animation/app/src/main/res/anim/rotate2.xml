@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" android:duration="2500">
+    <!--
+        android:fromDegrees="0" => 0도에서 회전 시작
+        android:toDegrees="360" => 360도까지 회전 끝(시계방향)
+        android:toDegrees="-360" => 360도까지 회전 끝(반시계방향)
+        android:repeatCount="infinite" => 횟수제한
+        android:repeatMode="restart"   => 다시시작
+        android:repeatMode="reverse"   => 반대로
+    -->
+    <rotate
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fromDegrees="0"
+        android:toDegrees="360"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse" />
+
+</set>

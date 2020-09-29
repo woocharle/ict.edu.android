@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000" >
+    <!--
+        android:fromXDelta="0%"   => 시작위치 X좌표
+        android:toXDelta="-100%"  => 끝위치  X좌표 (+ 오른쪽, - 왼쪽)
+        android:toYDelta="-100%"  => 끝위치  X좌표 (+ 아래, - 위)
+                            -->
+    <!--수평이동-->
+   <!-- <translate
+        android:fromXDelta="0%"
+        android:toXDelta="40%"  />-->
+
+    <!--수직이동-->
+   <!-- <translate
+        android:fromYDelta="0%"
+        android:toYDelta="60%"  />-->
+
+    <!--대각선 이동-->
+   <!-- <translate
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:toXDelta="40%"
+        android:toYDelta="400%"/>-->
+
+    <!-- 대각선으로 이동하면서 서서히 사라짐(alpha)-->
+    <!--<alpha android:fromAlpha="1.0"  불투명도 : 100
+            android:toAlpha="0.0"       불투명도 : 0 />-->
+    <!--<translate
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:toXDelta="40%"
+        android:toYDelta="400%"   />-->
+   <!--<alpha android:fromAlpha="1.0" android:toAlpha="0.0" />-->
+
+    <!-- 대각선 갔다가 오기-->
+    <translate
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:toXDelta="40%"
+        android:toYDelta="400%"   />
+    <translate
+        android:startOffset="1000"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:toXDelta="-40%"
+        android:toYDelta="-400%"   />
+
+</set>

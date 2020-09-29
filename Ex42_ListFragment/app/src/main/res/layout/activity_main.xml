@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/listfragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:name="com.ict.ex42_listfragment.List_Fragment"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ff0"
+        android:layout_weight="4">
+
+        <fragment
+            android:id="@+id/viewfragment"
+            android:layout_width="match_parent"
+            android:name="com.ict.ex42_listfragment.View_Fragment"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/two"/>
+    </LinearLayout>
+
+</LinearLayout>

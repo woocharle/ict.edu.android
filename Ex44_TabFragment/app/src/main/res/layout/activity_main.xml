@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- containers-bottomNavigationView 다운로드-->
+    <!-- res-menu 만들기 -->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!--
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="#fff"
+        app:itemTextColor="#0ff"
+        android:background="#FFFFFF"
+        app:menu="@menu/menu_bottom"/>
+     -->
+
+    <!-- drawable에 색을 만들어서 넣자 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:itemBackground="@color/colorPrimary"
+        android:background="#FFFFFF"
+        app:itemIconTint="@drawable/item_color"
+        app:itemTextColor="@drawable/item_color"
+        app:menu="@menu/menu_bottom"/>
+</LinearLayout>

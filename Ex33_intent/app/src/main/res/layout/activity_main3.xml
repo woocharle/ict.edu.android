@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity3">
+
+    <TextView
+        android:textSize="48dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="최다득표 그림" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="390dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="처음으로 이동" />
+</LinearLayout>

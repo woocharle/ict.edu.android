@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" android:duration="1000">
+   <!-- 자연스럽지 못해서 사용안함
+        <translate
+        android:fromXDelta="0%"
+        android:toXDelta="100%" />-->
+
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="-100%" />
+</set>

@@ -67,4 +67,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {          return items.size();       }
     }
+
+    public String Event01(){
+        String msg = fragment_2.getTextView2();
+        return msg;
+    }
 }

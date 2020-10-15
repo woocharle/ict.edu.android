@@ -21,7 +21,7 @@ public class MyFrag extends Fragment {
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         /* 내용보기*/
         /* return inflater.inflate(R.layout.sub_frag, container);*/
-
+        /* https://developer.android.com/guide/components/fragments */
         /* 이벤트처리할때 */
         ViewGroup vg  = (ViewGroup)inflater.inflate(R.layout.sub_frag, container);
         CheckBox checkBox = vg.findViewById(R.id.checkBox);

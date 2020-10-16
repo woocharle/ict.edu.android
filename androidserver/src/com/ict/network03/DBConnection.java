@@ -22,7 +22,7 @@ public class DBConnection {
 		}
 	}
 	
-	// members의 전체 정보 보기 
+	// members
 	public ArrayList<String> selectAll(){
 		ArrayList<String> list = new ArrayList<String>();
 		try {
@@ -45,7 +45,7 @@ public class DBConnection {
 		return list;
 	}
 	
-	// MyController에서 사용 => MainActivity7
+	// MyController  => MainActivity7
 	public String selectAll2(){
 		StringBuffer sb = new StringBuffer();
 		try {
@@ -64,5 +64,27 @@ public class DBConnection {
 		}
 		return sb.toString();
 	}
-	
+
+	// MyController3,4,5
+	public ArrayList<VO> selectAll3(){
+		ArrayList<VO> list = new ArrayList<VO>();
+		try {
+			String sql = "select * from members order by idx";
+			pstm = conn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			while(rs.next()) {
+				VO vo  = new VO();
+				vo.setIdx(rs.getString("idx"));
+				vo.setM_id(rs.getString("m_id"));
+				vo.setM_pw(rs.getString("m_pw"));
+				vo.setM_name(rs.getString("m_name"));
+				vo.setM_age(rs.getString("m_age"));
+				vo.setM_reg(rs.getString("m_reg").substring(0, 10));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return list;
+	}
 }

@@ -47,7 +47,7 @@
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WEB 문서 만들기_텍스트(WebView)" />
+        android:text="서블릿정보를 가져와서 문서만들기(WebView)" />
 
     <Button
         android:id="@+id/button8"
@@ -65,7 +65,7 @@
         android:id="@+id/button10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="web예제" />
+        android:text="web 파싱 (XML, JSON)" />
 
     <Button
         android:id="@+id/button11"

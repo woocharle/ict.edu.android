@@ -1,4 +1,4 @@
-package com.ict.ex82_socket2;
+package com.ict.ex82_socket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +20,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class MainActivity10 extends AppCompatActivity {
-    Button btn6, btn7;
+public class MainActivity11 extends AppCompatActivity {
+    Button btn6, btn7 ;
     WebView webView4;
     Handler handler = new Handler();
     String year, month, day, hour, local, desc, ta, icon;
@@ -29,11 +29,10 @@ public class MainActivity10 extends AppCompatActivity {
     final static String OPENLIB_URL = "http://openapi.seoul.go.kr:8088/sample/json/SeoulLibraryTime/1/5/";
     ArrayList<VO> list = new ArrayList<>();
     String msg;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main10);
+        setContentView(R.layout.activity_main11);
         btn6 = findViewById(R.id.btn6);
         btn7 = findViewById(R.id.btn7);
         webView4 = findViewById(R.id.webView4);
@@ -49,14 +48,13 @@ public class MainActivity10 extends AppCompatActivity {
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
-                                xml_process();
+                               xml_process();
                             }
                         });
                     }
                 }).start();
             }
         });
-
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,9 +119,9 @@ public class MainActivity10 extends AppCompatActivity {
                 }else if(parser.getEventType() == XmlPullParser.TEXT){ // 텍스트 태그
                     local = parser.getText();
                 }else if(parser.getEventType() == XmlPullParser.END_TAG){ // 끝태그
-                    if(! local.trim().equals("")){
-                        list.add(new VO(local,desc,ta, icon));
-                    }
+                   if(! local.trim().equals("")){
+                       list.add(new VO(local,desc,ta, icon));
+                   }
                 }
                 parser.next(); // 다음줄로 이동
             }

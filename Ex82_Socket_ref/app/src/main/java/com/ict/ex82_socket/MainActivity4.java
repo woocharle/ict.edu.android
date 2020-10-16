@@ -1,9 +1,10 @@
-package com.ict.ex82_socket_ref;
+package com.ict.ex82_socket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,7 +38,7 @@ public class MainActivity4 extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        msg = sendServer("203.236.220.86", 7889, "test");
+                        msg = sendServer("203.236.220.55", 7889, "test");
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -54,7 +55,7 @@ public class MainActivity4 extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        msg = sendServer("203.236.220.86", 7889, "db");
+                        msg = sendServer("203.236.220.55", 7889, "db");
                         handler.post(new Runnable() {
                             @Override
                             public void run() {

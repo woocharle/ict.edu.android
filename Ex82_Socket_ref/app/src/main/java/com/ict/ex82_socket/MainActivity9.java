@@ -1,4 +1,4 @@
-package com.ict.ex82_socket2;
+package com.ict.ex82_socket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,32 +25,31 @@ import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-public class MainActivity8 extends AppCompatActivity {
+public class MainActivity9 extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4;
     TextView result4;
     Handler handler = new Handler();
-    String msg;
-
+    String msg ,sax_msg1, sax_msg2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main8);
+        setContentView(R.layout.activity_main9);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
         btn4 = findViewById(R.id.btn4);
         result4 = findViewById(R.id.result4);
-
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        serverConnect("http://203.236.220.86:8090/MyController2");
+                        serverConnect("http://203.236.220.55:8090/androidserver/MyController2");
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -59,7 +58,6 @@ public class MainActivity8 extends AppCompatActivity {
                         });
                     }
                 }).start();
-
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +66,7 @@ public class MainActivity8 extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        serverConnect("http://203.236.220.86:8090/MyController3");
+                        serverConnect("http://203.236.220.55:8090/androidserver/MyController3");
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -85,11 +83,12 @@ public class MainActivity8 extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        serverConnect("http://203.236.220.86:8090/MyController2");
+                        serverConnect("http://203.236.220.55:8090/androidserver/MyController2");
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
                                 xmlProcess03();
+                                //result4.setText(sax_msg1);
                             }
                         });
                     }
@@ -102,7 +101,7 @@ public class MainActivity8 extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        serverConnect("http://203.236.220.86:8090/MyController3");
+                        serverConnect("http://203.236.220.55:8090/androidserver/MyController3");
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -113,9 +112,7 @@ public class MainActivity8 extends AppCompatActivity {
                 }).start();
             }
         });
-
     }
-
     private void serverConnect(String str){
         StringBuffer sb = new StringBuffer();
         try {
@@ -125,7 +122,7 @@ public class MainActivity8 extends AppCompatActivity {
                 conn.setConnectTimeout(10000);
                 if(conn.getResponseCode() == HttpURLConnection.HTTP_OK){
                     BufferedReader br = new BufferedReader( new InputStreamReader(
-                            conn.getInputStream(),"utf-8"));
+                                            conn.getInputStream(),"utf-8"));
                     while(true){
                         String line = br.readLine();
                         if(line == null) break;
@@ -139,7 +136,7 @@ public class MainActivity8 extends AppCompatActivity {
         }
         msg = sb.toString();
     }
-
+    // DOM 방식이고, XML이 태그로만 이루어져있음
     private void xmlProcess01(){
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -170,7 +167,8 @@ public class MainActivity8 extends AppCompatActivity {
         }catch (Exception e){
         }
     }
-    private void xmlProcess02(){
+    // DOM 방식이고, XML이 태그와 속성으로만 이루어져있음
+    private void  xmlProcess02(){
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -178,80 +176,79 @@ public class MainActivity8 extends AppCompatActivity {
 
             // 태그 구하기
             NodeList member = document.getElementsByTagName("member");
-            StringBuffer sb = new StringBuffer("XML Attr (DOM)방식");
-            for (int i = 0; i < member.getLength() ; i++){
+            StringBuffer sb = new StringBuffer("XML_Attr(DOM) 방식");
+            for (int i=0; i<member.getLength(); i++){
                 sb.append("\n");
                 sb.append(
-                    member.item(i).getFirstChild().getNodeValue()+ ", " +
-                    ((Element)member.item(i)).getAttribute("idx") + ", " +
-                    ((Element)member.item(i)).getAttribute("m_id") + ", " +
-                    ((Element)member.item(i)).getAttribute("m_pw") + ", " +
-                    ((Element)member.item(i)).getAttribute("m_age") + ", " +
-                    ((Element)member.item(i)).getAttribute("m_reg"));
+                        member.item(i).getFirstChild().getNodeValue()+", "+
+                        ((Element)member.item(i)).getAttribute("idx")+", " +
+                        ((Element)member.item(i)).getAttribute("m_id")+", " +
+                        ((Element)member.item(i)).getAttribute("m_pw")+", " +
+                        ((Element)member.item(i)).getAttribute("m_age")+", " +
+                        ((Element)member.item(i)).getAttribute("m_reg"));
             }
             result4.setText(sb.toString());
         }catch (Exception e){
         }
     }
-
-    private void xmlProcess03(){
+    // SAX방식이고, XML이 태그로만 이루어져있음
+    private void xmlProcess03()  {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
             XMLReader reader = parser.getXMLReader();
 
+            // SAX를 파싱하는 내부클래스 별도 생성
             reader.setContentHandler(new SAX_process01());
             reader.parse(new InputSource(new StringReader(msg)));
         }catch (Exception e){
-
         }
     }
+    // SAX방식이고, XML이 태그와 속성으로만 이루어져있음
+    private void xmlProcess04(){
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser parser = factory.newSAXParser();
+            XMLReader reader = parser.getXMLReader();
 
-    class SAX_process01 extends DefaultHandler {
-        StringBuffer sb = new StringBuffer("XML_Tag(SAX) 방식\n ");
+            // SAX를 파싱하는 내부클래스 별도 생성
+            reader.setContentHandler(new SAX_process02());
+            reader.parse(new InputSource(new StringReader(msg)));
+        }catch (Exception e){
+        }
+    }
+    // 태그만 있는 XML는 시작태그, 끝태그사이의 문자만 추출
+    class SAX_process01 extends DefaultHandler{
+            StringBuffer sb = new StringBuffer("XML_Tag(SAX) 방식\n ");
         @Override
         public void characters(char[] ch, int start, int length) throws SAXException {
             sb.append(new String(ch,start,length).trim()+" ");
         }
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
-            if(qName.equals("m_reg")){
-                sb.append("\n");
-            }
-            result4.setText(sb.toString());
+           if(qName.equals("m_reg")){
+               sb.append("\n");
+           }
+           result4.setText(sb.toString());
         }
     }
-
-    private void xmlProcess04(){
-        try{
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser parser = factory.newSAXParser();
-            XMLReader reader = parser.getXMLReader();
-
-            reader.setContentHandler(new SAX_Process02());
-            reader.parse(new InputSource(new StringReader(msg)));
-
-        }catch (Exception e){
-        }
-    }
-
-    class SAX_Process02 extends DefaultHandler{
+    // 속성과 태그로 이루어진 XML
+    class SAX_process02 extends DefaultHandler{
         StringBuffer sb = new StringBuffer("XML_Attr(SAX) 방식\n");
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-            if (qName.equals("member")){
-                sb.append(attributes.getValue("idx")+" ");
-                sb.append(attributes.getValue("m_id")+" ");
-                sb.append(attributes.getValue("m_pw")+" ");
-                sb.append(attributes.getValue("m_age")+" ");
-                sb.append(attributes.getValue("m_reg")+" ");
-
-            }
+           if(qName.equals("member")){
+               sb.append(attributes.getValue("idx")+" ");
+               sb.append(attributes.getValue("m_id")+" ");
+               sb.append(attributes.getValue("m_pw")+" ");
+               sb.append(attributes.getValue("m_age")+" ");
+               sb.append(attributes.getValue("m_reg")+" ");
+           }
         }
 
         @Override
         public void characters(char[] ch, int start, int length) throws SAXException {
-            sb.append(new String(ch, start, length).trim());
+            sb.append(new String(ch,start,length).trim());
         }
 
         @Override
@@ -260,5 +257,4 @@ public class MainActivity8 extends AppCompatActivity {
             result4.setText(sb.toString());
         }
     }
-
 }

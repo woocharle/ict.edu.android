@@ -1,4 +1,4 @@
-package com.ict.ex82_socket_ref;
+package com.ict.ex82_socket;
 
 import org.junit.Test;
 

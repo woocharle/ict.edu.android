@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ict.ex82_socket_ref">
+    package="com.ict.ex82_socket">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -21,18 +21,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC1Tys_MMYGYGWNdNOeQB3EwhTbImSFOHY" />
 
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity12" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity11" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity10" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity9" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity8" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity7" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity6" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity5" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity4" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity3" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity2" />
-        <activity android:name="com.ict.ex82_socket_ref.MainActivity">
+        <activity android:name=".MainActivity12" />
+        <activity android:name=".MainActivity11" />
+        <activity android:name=".MainActivity10" />
+        <activity android:name=".MainActivity9" />
+        <activity android:name=".MainActivity8" />
+        <activity android:name=".MainActivity7" />
+        <activity android:name=".MainActivity6" />
+        <activity android:name=".MainActivity5" />
+        <activity android:name=".MainActivity4" />
+        <activity android:name=".MainActivity3" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

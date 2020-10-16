@@ -1,4 +1,4 @@
-package com.ict.ex82_socket_ref;
+package com.ict.ex82_socket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +22,7 @@ public class MainActivity3 extends AppCompatActivity {
     Socket s;
     Handler handler = new Handler();
     String msg;
-    static final String IP = "203.236.220.86";
+    static final String IP = "203.236.220.55";
     static final int PORT = 8889;
     BufferedWriter writer ;
     BufferedReader reader ;

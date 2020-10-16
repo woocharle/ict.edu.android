@@ -97,7 +97,9 @@
    Ex67 ~ 71 : service & receiver 
    
    Ex71: 동적 receiver => 내부클라스 형태며 등록과 해제가 자유로워서 Manifest에 등록을 할 필요가 없다. 
-	
+
+   EX82: eclipse 및 서버와 연동. (parsing 등도 한다.) 
+	 eclipse로 MVC패턴 구축하고 안드로이드 스튜디오에 java파일과 xml 파일을 만들 것. 
 
 8. Google API
 

@@ -1,4 +1,4 @@
-package com.ict.controllder;
+package com.ict.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;

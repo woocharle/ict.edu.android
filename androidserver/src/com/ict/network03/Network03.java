@@ -18,7 +18,7 @@ public class Network03 implements Runnable{
 	public Network03() {
 		try {
 			ss = new ServerSocket(7889);
-			System.out.println("¼­¹ö ½ÇÇà Áß ....");
+			System.out.println("ì„œë²„ ì‹¤í–‰ ì¤‘ ....");
 			
 			new Thread(this).start();
 		} catch (Exception e) {
@@ -36,7 +36,7 @@ public class Network03 implements Runnable{
 					new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 				String msg = reader.readLine();
 				if(msg.equals("test")) {
-					// Á¢¼Ó °Ë»ç
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
 					writer.write("connet success" + System.getProperty("line.separator"));
 					writer.flush();
 				}else if(msg.equals("db")) {
